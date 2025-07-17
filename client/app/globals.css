@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tema Claro (por defecto) */
+    --color-primary: 225 0 82;     /* #E10052 */
+    --color-secondary: 193 12 79;   /* #C10C4F */
+    --color-tertiary: 165 3 76;     /* #A5034C */
+    --color-dark: 66 5 38;          /* #420526 */
+    --color-black: 15 15 15;        /* #0F0F0F */
+    
+    --bg-primary: 255 255 255;      /* #FFFFFF */
+    --bg-secondary: 245 245 245;    /* #F5F5F5 */
+    --bg-tertiary: 235 235 235;     /* #EBEBEB */
+    
+    --text-primary: 15 15 15;       /* #0F0F0F */
+    --text-secondary: 74 74 74;     /* #4A4A4A */
+    --text-tertiary: 122 122 122;   /* #7A7A7A */
+  }
+  
+  .dark {
+    /* Tema Oscuro */
+    --color-primary: 225 0 82;      /* #E10052 - mantiene colores vibrantes */
+    --color-secondary: 193 12 79;    /* #C10C4F */
+    --color-tertiary: 165 3 76;      /* #A5034C */
+    --color-dark: 66 5 38;           /* #420526 */
+    --color-black: 15 15 15;         /* #0F0F0F */
+    
+    --bg-primary: 15 15 15;          /* #0F0F0F */
+    --bg-secondary: 26 26 26;        /* #1A1A1A */
+    --bg-tertiary: 37 37 37;         /* #252525 */
+    
+    --text-primary: 255 255 255;     /* #FFFFFF */
+    --text-secondary: 176 176 176;   /* #B0B0B0 */
+    --text-tertiary: 128 128 128;    /* #808080 */
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: rgb(var(--bg-primary));
+  background-attachment: fixed;
+  color: rgb(var(--text-primary));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer components {
+  .btn-puntus {
+    @apply bg-gradient-to-r from-puntus-primary to-puntus-secondary hover:from-puntus-secondary hover:to-puntus-tertiary text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+
+  .card-glass {
+    @apply backdrop-blur-md bg-background-secondary/30 dark:bg-puntus-dark/30 border border-puntus-primary/30 rounded-lg shadow-xl;
+  }
+
+  .nav-glass {
+    @apply backdrop-blur-md bg-background-primary/80 dark:bg-puntus-dark/50 border-b border-puntus-primary/20 shadow-lg;
+  }
+
+  .input-puntus {
+    @apply bg-background-secondary dark:bg-puntus-dark/40 border border-gray-300 dark:border-puntus-tertiary/40 rounded-lg px-4 py-2 text-text-primary placeholder-text-tertiary dark:placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-puntus-primary focus:border-transparent backdrop-blur-md;
+  }
+
+  .select-puntus {
+    @apply bg-background-secondary dark:bg-puntus-dark/40 border border-gray-300 dark:border-puntus-tertiary/40 rounded-lg px-4 py-2 text-text-primary focus:outline-none focus:ring-2 focus:ring-puntus-primary focus:border-transparent backdrop-blur-md appearance-none;
+  }
+
+  .select-puntus option {
+    @apply bg-background-primary dark:bg-puntus-dark text-text-primary;
+  }
+
+  /* Clases elegantes con paleta consistente */
+  .btn-elegant {
+    @apply bg-gray-100 dark:bg-slate-900 text-gray-900 dark:text-white px-6 py-2.5 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition-all duration-200 font-medium shadow-lg hover:shadow-xl;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-pink-500 to-rose-600 text-white px-8 py-4 rounded-lg hover:from-pink-600 hover:to-rose-700 transition-all duration-200 font-semibold shadow-xl hover:shadow-2xl;
+  }
+
+  .btn-elegant-outline {
+    @apply border-2 border-puntus-primary/30 text-text-primary hover:border-puntus-primary hover:bg-puntus-primary/10 transition-all px-6 py-2.5 rounded-lg font-medium;
+  }
+
+  .card-elegant-orange {
+    @apply bg-background-primary dark:bg-background-secondary p-8 rounded-lg shadow-sm hover:shadow-xl border border-transparent hover:border-puntus-primary/20 transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .nav-elegant {
+    @apply backdrop-blur-sm bg-background-primary/80 dark:bg-background-secondary/80 border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent;
+  }
+
+  .icon-container-gradient {
+    @apply w-16 h-16 rounded-lg flex items-center justify-center bg-gradient-to-br from-pink-500 to-rose-600 group-hover:scale-110 transition-transform;
+  }
+
+  /* Clase para el resaltado de "Scrims" */
+  .highlight-scrims {
+    @apply inline-block bg-gradient-to-r from-pink-500 to-rose-600 text-white px-4 py-2 rounded-lg -skew-x-6 transform;
+    /* Ajusta el padding y rounded según el gusto */
+  }
+
+  /* Clases para texto con solo degradado (sin shimmer) */
+  .gradient-text-only {
+    @apply bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent inline-block;
+  }
+
+  .gradient-text-only-white {
+    @apply bg-gradient-to-r from-white to-pink-200 bg-clip-text text-transparent inline-block;
+  }
+
+  /* Paleta de colores rosita personalizada */
+  .bg-puntus-pink {
+    background-color: #E10052;
+  }
+
+  .text-puntus-pink {
+    color: #E10052;
+  }
+
+  .border-puntus-pink {
+    border-color: #E10052;
+  }
+
+  .gradient-puntus-pink {
+    background: linear-gradient(135deg, #E10052, #FF69B4, #DC143C);
+  }
+
+  /* Versión más suave */
+  .gradient-puntus-pink-soft {
+    background: linear-gradient(135deg, #F8BBD9, #E10052, #F06292);
+  }
+
+  /* Eliminadas las animaciones y propiedades de shimmer */
+  /* @keyframes shimmer-pass y otras animaciones de shimmer ya no se usan */
+
+  /* Efectos 3D */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .rotateY-12 {
+    transform: rotateY(12deg);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}

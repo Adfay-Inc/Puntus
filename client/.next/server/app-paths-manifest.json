@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/scrim/[id]/page": "app/scrim/[id]/page.js",
+  "/scrim/[id]/results/page": "app/scrim/[id]/results/page.js"
+}
